@@ -16,8 +16,9 @@ A convolutional neural network for German traffic sign image classification.
 The images are photos of traffic signs. The images are classified into 43 classes. The training set contains 39209 labeled images and the test set contains 12630 images. Labels for the test set are not published.  
 See more details [here](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset).
 
+
 ### How to use with Hub
-A simple way of using this dataset is with [Activeloop](https://activeloop.ai)'s python package [Hub](https://github.com/activeloopai/Hub)!      
+A simple way of using this dataset is with [Activeloop](https://activeloop.ai)'s python package [Hub](https://github.com/activeloopai/Hub)!   
 
 First, run `pip install hub` (or `pip3 install hub`). 
 
@@ -28,7 +29,7 @@ ds = hub.load('hub://activeloop/gtsrb-train')
 #check out the first image and all of its details!
 import matplotlib.pyplot as plt
 plt.imshow(ds.images[0].numpy()) 
-plt.title(f" boxes :  {ds.boxes[0].numpy()},labels :  {ds.labels[0].numpy()},shapes :  {ds.shapes[0].numpy()},colors :  {ds.colors[0].numpy()},")
+plt.title(f" boxes :  {ds.boxes[0].numpy()},labels :  {ds.labels[0].numpy()},shapes :  {ds.shapes[0].numpy()},colors :  {ds.colors[0].numpy()}")
 plt.show() 
  
 # train a model in pytorch
@@ -42,7 +43,7 @@ for sample in ds.tensorflow():
 available tensors can be shown by printing dataset:
 
 ```python
-print(ds) 
+print(ds)
 
 # prints: Dataset(path='hub://activeloop/gtsrb-train', read_only=True, tensors=['images', 'boxes', 'labels', 'shapes', 'colors'])
 ```
